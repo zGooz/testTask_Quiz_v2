@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 982068622}
   - component: {fileID: 982068624}
   - component: {fileID: 982068623}
+  - component: {fileID: 982068625}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -400,6 +401,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982068621}
   m_CullTransparentMesh: 0
+--- !u!114 &982068625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982068621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255b088c1de1b714681e97e5aabd2af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1397788921
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f1c8cb13a4e6b24cbf7eb5bd2ea2e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loader: {fileID: 2071237755}
   _levelSizes: 030000000600000009000000
 --- !u!1 &1821756972
 GameObject:
@@ -948,6 +962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _duration: 6
+  _loader: {fileID: 2071237755}
 --- !u!1 &2071237753
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,5 +1014,6 @@ MonoBehaviour:
   _board: {fileID: 864901724}
   _cellPrefab: {fileID: 2320547185709605443, guid: 714da28aeb7a3384b823fd91c095532b,
     type: 3}
+  _restartButton: {fileID: 982068625}
   _numberOfCellsInRow: 3
   _level: {fileID: 1799101974}

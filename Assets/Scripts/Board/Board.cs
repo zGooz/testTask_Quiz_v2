@@ -11,7 +11,7 @@ public class Board : MonoBehaviour
     public event UnityAction EffectComplite;
 
     [SerializeField]
-    private float _duration;
+    private float _duration = 6f;
 
     [SerializeField, Min(1)]
     private float _scaleFactor = 1.4f;

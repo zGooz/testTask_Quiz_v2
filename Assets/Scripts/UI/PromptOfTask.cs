@@ -9,7 +9,10 @@ using UnityEngine;
 public class PromptOfTask : MonoBehaviour
 {
     [SerializeField]
-    private float _duration;
+    private float _duration = 3f;
+
+    [SerializeField]
+    private Loader _loader;
 
     private TextMeshProUGUI _field;
 
@@ -19,5 +22,20 @@ public class PromptOfTask : MonoBehaviour
 
         var sequence = DOTween.Sequence();
         sequence.Append(_field.DOFade(1f, _duration));
+    }
+
+    private void OnEnable()
+    {
+        _loader.LoadComplete += SetText;
+    }
+
+    private void OnDisable()
+    {
+        _loader.LoadComplete -= SetText;
+    }
+
+    private void SetText()
+    {
+        _field.text = "Find " + _loader.Answer.sought;
     }
 }

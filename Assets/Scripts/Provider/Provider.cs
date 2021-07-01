@@ -44,12 +44,5 @@ public class Content
     public Sprite icon;
     public string sought;
 
-    public int Value { get; private set; }
-
-    public void Restore()
-    {
-        icon = null;
-        sought = "";
-        Value = 0;
-    }
+    public int Value { get; set; }
 }

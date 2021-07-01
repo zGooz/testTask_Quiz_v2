@@ -1,5 +1,6 @@
 ﻿
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,11 +9,19 @@ using System.Linq;
 
 public class Loader : MonoBehaviour
 {
+    public event UnityAction LoadComplete;
+    public event UnityAction NextLevel;
+
+    public Content Answer { get; private set; }
+
     [SerializeField]
     private Board _board;
 
     [SerializeField]
     private GameObject _cellPrefab;
+
+    [SerializeField]
+    private Button _restartButton;
 
     [SerializeField]
     private int _numberOfCellsInRow;
@@ -35,11 +44,26 @@ public class Loader : MonoBehaviour
     private void OnEnable()
     {
         _board.EffectComplite += LoadLevel;
+        _level.MovedToNewLevel += LoadLevel;
     }
 
     private void OnDisable()
     {
-        _board.EffectComplite += LoadLevel;
+        _board.EffectComplite -= LoadLevel;
+        _level.MovedToNewLevel -= LoadLevel;
+    }
+
+    public void ReactToChoosingCorrectAnswer()
+    {
+        if (_level.HasNextLevel)
+        {
+            NextLevel?.Invoke();
+        }
+        else
+        {
+            Clear();
+            _restartButton.gameObject.SetActive(true);
+        }
     }
 
     private void LoadLevel()
@@ -47,6 +71,11 @@ public class Loader : MonoBehaviour
         Clear();
         FillContent();
         SpawnContent();
+        FillCellsWithData();
+
+        Answer = ChooseCorrectAnswer();
+
+        LoadComplete?.Invoke();
     }
 
     private void Clear()
@@ -104,5 +133,23 @@ public class Loader : MonoBehaviour
                 k += 1;
             }
         }
+    }
+
+    private void FillCellsWithData()
+    {
+        for (var i = 0; i < _content.Count; i++)
+        {
+            var data = _content[i];
+            var cell = _cells[i].GetComponent<Cell>();
+
+            data.Value = i;
+            cell.ApplyChanges(data);
+        }
+    }
+
+    private Content ChooseCorrectAnswer()
+    {
+        var index = Random.Range(0, _content.Count);
+        return _content[index];
     }
 }
