@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class LevelsProperty : MonoBehaviour
 {
-    public IReadOnlyCollection<Content> Batch => _batch;
+    public IReadOnlyCollection<Content> AnswerBatch => _batch;
     public int CurrentLevel { get; private set; } = 0;
     public bool HasNextLevel => CurrentLevel != _levelSizes.Count;
     public int CurrentLevelSize => _levelSizes[CurrentLevel];
