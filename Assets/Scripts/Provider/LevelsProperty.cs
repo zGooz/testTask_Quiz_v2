@@ -21,6 +21,9 @@ public class LevelsProperty : MonoBehaviour
     [SerializeField]
     private List<int> _levelSizes;
 
+    [SerializeField]
+    private Restarter _restarter;
+
     private Provider _provider;
     private IReadOnlyCollection<Content> _batch;
 
@@ -33,11 +36,18 @@ public class LevelsProperty : MonoBehaviour
     private void OnEnable()
     {
         _loader.NextLevel += Next;
+        _restarter.Reset += Reset;
     }
 
     private void OnDisable()
     {
         _loader.NextLevel -= Next;
+        _restarter.Reset -= Reset;
+    }
+
+    private void Reset()
+    {
+        CurrentLevel = 0;
     }
 
     private void Next()

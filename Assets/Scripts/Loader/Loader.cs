@@ -24,6 +24,9 @@ public class Loader : MonoBehaviour
     private Button _restartButton;
 
     [SerializeField]
+    private Restarter _restarter;
+
+    [SerializeField]
     private int _numberOfCellsInRow;
 
     [SerializeField]
@@ -45,12 +48,14 @@ public class Loader : MonoBehaviour
     {
         _board.EffectComplite += LoadLevel;
         _level.MovedToNewLevel += LoadLevel;
+        _restarter.Restart += LoadLevel;
     }
 
     private void OnDisable()
     {
         _board.EffectComplite -= LoadLevel;
         _level.MovedToNewLevel -= LoadLevel;
+        _restarter.Restart -= LoadLevel;
     }
 
     public void ReactToChoosingCorrectAnswer()

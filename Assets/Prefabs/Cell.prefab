@@ -87,6 +87,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca699cbf513d8b94b94e66db91df6cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ScaleDuration: 0.3
+  _scaleFactorOut: 1.1
+  _scaleFactorIn: 0.9
+  _shakeDuration: 1
+  _strength: 12
+  _vibrato: 6
+  _randomness: 180
+  _particle: {fileID: 7516922037949414040, guid: 3ac75005b64f5f54b89a977fc9c3fe71,
+    type: 3}
 --- !u!114 &7324095035721495695
 MonoBehaviour:
   m_ObjectHideFlags: 0
