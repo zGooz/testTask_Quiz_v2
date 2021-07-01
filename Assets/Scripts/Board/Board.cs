@@ -13,12 +13,15 @@ public class Board : MonoBehaviour
     [SerializeField]
     private float _duration;
 
+    [SerializeField, Min(1)]
+    private float _scaleFactor = 1.4f;
+
     private void Awake()
     {
         var rectangle = GetComponent<RectTransform>();
         var sequence = DOTween.Sequence();
 
-        sequence.Append(rectangle.DOScale(1, _duration))
+        sequence.Append(rectangle.DOScale(_scaleFactor, _duration))
                 .AppendCallback(() => EffectComplite?.Invoke());
     }
 }

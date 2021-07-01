@@ -24,6 +24,9 @@ public class Loader : MonoBehaviour
     private List<Content> _content = new List<Content>();
     private List<GameObject> _cells = new List<GameObject>();
 
+    private const float CELL_WIDTH = 2f;
+    private const float CELL_HEIGHT = 1.8f;
+
     private void Awake()
     {
         _rectangle = GetComponent<RectTransform>();
@@ -82,20 +85,17 @@ public class Loader : MonoBehaviour
     private void SpawnContent()
     {
         var levelSize = _level.CurrentLevelSize;
-        var position = _rectangle.anchoredPosition;
-
-        var cellTransform = _cellPrefab.GetComponent<RectTransform>();
-        var width = cellTransform.sizeDelta.x;
-        var height = cellTransform.sizeDelta.y;
-
         var j = 0;
         var k = 0;
 
         for (var i = 0; i < levelSize; i++)
         {
-            var x = position.x + width * j;
-            var y = position.y + height * k;
-            var cellPosition = new Vector2(x, y);
+            var cellPos = new Vector2(CELL_WIDTH * (j - 1), - CELL_HEIGHT * (k - 0.5f));
+            var cell = Instantiate(_cellPrefab, cellPos, Quaternion.identity, _rectangle);
+            var cellTransform = _cellPrefab.GetComponent<RectTransform>();
+
+            cellTransform.localScale = new Vector2(1, 1);
+            _cells.Add(cell);
 
             j += 1;
             if (j == _numberOfCellsInRow)
@@ -103,9 +103,6 @@ public class Loader : MonoBehaviour
                 j = 0;
                 k += 1;
             }
-
-            var cell = Instantiate(_cellPrefab, _rectangle);
-            _cells.Add(cell);
         }
     }
 }
