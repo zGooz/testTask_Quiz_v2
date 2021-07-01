@@ -250,8 +250,9 @@ GameObject:
   - component: {fileID: 864901721}
   - component: {fileID: 864901723}
   - component: {fileID: 864901722}
+  - component: {fileID: 864901724}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Background of board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,7 +267,7 @@ RectTransform:
   m_GameObject: {fileID: 864901720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.33, y: 0.33, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 267008745}
   m_RootOrder: 0
@@ -289,7 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.13333334}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -312,6 +313,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864901720}
   m_CullTransparentMesh: 0
+--- !u!114 &864901724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864901720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093b7128694f331498c40b071badd99c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 3
 --- !u!1 &982068621
 GameObject:
   m_ObjectHideFlags: 0

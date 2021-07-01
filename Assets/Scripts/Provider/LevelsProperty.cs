@@ -10,6 +10,7 @@ public class LevelsProperty : MonoBehaviour
     public IReadOnlyCollection<Content> Batch => _batch;
     public int CurrentLevel { get; private set; } = 0;
     public bool HasNextLevel => CurrentLevel != _levelSizes.Count;
+    public int CurrentLevelSize => _levelSizes[CurrentLevel];
 
     [SerializeField]
     private List<int> _levelSizes;
@@ -17,7 +18,7 @@ public class LevelsProperty : MonoBehaviour
     private Provider _provider;
     private IReadOnlyCollection<Content> _batch;
 
-    private void Awake()
+    private void Start()
     {
         _provider = GetComponent<Provider>();
         _batch = _provider.GetRandomBatch();
