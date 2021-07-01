@@ -637,6 +637,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1799101972}
+  - component: {fileID: 1799101973}
+  - component: {fileID: 1799101974}
   m_Layer: 5
   m_Name: Provider
   m_TagString: Untagged
@@ -663,6 +665,105 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1799101973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799101971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf9316426c6f1f04b8566e635baa1e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numbers:
+  - icon: {fileID: 21300000, guid: b212cb8252c037f46881854f9b1eea3f, type: 3}
+    sought: 1
+  - icon: {fileID: 21300000, guid: fe654be41991e6f4da174cd4a24f1f1b, type: 3}
+    sought: 2
+  - icon: {fileID: 21300000, guid: 9beca668e4d379f4cb64c0a5943e920c, type: 3}
+    sought: 3
+  - icon: {fileID: 21300000, guid: 8b91357b8584e8b41bdc39d8dc603003, type: 3}
+    sought: 4
+  - icon: {fileID: 21300000, guid: 7d982dba40d681147b01ac469330432c, type: 3}
+    sought: 5
+  - icon: {fileID: 21300000, guid: 9e467c2996e836d43b9e13f323f3665b, type: 3}
+    sought: 6
+  - icon: {fileID: 21300000, guid: 583cd55b2451ddb429ac77431839ff7a, type: 3}
+    sought: 7
+  - icon: {fileID: 21300000, guid: 616e2de7f4d1ca540bcd9f23d7b40bc2, type: 3}
+    sought: 8
+  - icon: {fileID: 21300000, guid: 62132180de8f5524c95ba694037a84e3, type: 3}
+    sought: 9
+  - icon: {fileID: 21300000, guid: 80c7b72ef3c64874ab98e79a5d2e0587, type: 3}
+    sought: 0
+  _letters:
+  - icon: {fileID: 21300000, guid: a622261f28086c7479f3efc588f2ca39, type: 3}
+    sought: A
+  - icon: {fileID: 21300000, guid: dcf87ba6afa2d7e45acc10bb9c29bb5d, type: 3}
+    sought: B
+  - icon: {fileID: 21300000, guid: 0909485f2d2ef294db3424848204fc25, type: 3}
+    sought: C
+  - icon: {fileID: 21300000, guid: 89df1c349d24d6f45810bd1a5c05a2df, type: 3}
+    sought: D
+  - icon: {fileID: 21300000, guid: fc6ad546755368b41939d1daa2104557, type: 3}
+    sought: E
+  - icon: {fileID: 21300000, guid: d0d24cb60145ed9419e1fe9101dbb07a, type: 3}
+    sought: F
+  - icon: {fileID: 21300000, guid: 4b2a78e8251453144a6f089d4f320c6f, type: 3}
+    sought: G
+  - icon: {fileID: 21300000, guid: 4c92c6a071a3c664a94bd30fa087645f, type: 3}
+    sought: H
+  - icon: {fileID: 21300000, guid: 7aa3c28cc34d4d2458b3ce6db1fdc5f2, type: 3}
+    sought: I
+  - icon: {fileID: 21300000, guid: 28afe187a1f035348bb74e6f7ba77d6f, type: 3}
+    sought: J
+  - icon: {fileID: 21300000, guid: 24206a03d0750434cbf26fb196ef72c3, type: 3}
+    sought: K
+  - icon: {fileID: 21300000, guid: d03196be15370354da6ef384e65a29a9, type: 3}
+    sought: L
+  - icon: {fileID: 21300000, guid: b03e950f58d354a49abc25f1030b7595, type: 3}
+    sought: M
+  - icon: {fileID: 21300000, guid: fefc09afff7868b4ca19479ed666bf03, type: 3}
+    sought: N
+  - icon: {fileID: 21300000, guid: 3064c3d042dc7c3418f222afcff8ed96, type: 3}
+    sought: O
+  - icon: {fileID: 21300000, guid: 7fa55b481834b19439db06b48154c14f, type: 3}
+    sought: P
+  - icon: {fileID: 21300000, guid: 57f794d07fff3f3478473eb67096ba23, type: 3}
+    sought: Q
+  - icon: {fileID: 21300000, guid: 4d8cc98e0f1b89c4cab28f7d45255b37, type: 3}
+    sought: R
+  - icon: {fileID: 21300000, guid: 72a36c932215cfa4b80d17a1e883ef41, type: 3}
+    sought: S
+  - icon: {fileID: 21300000, guid: 1a21e97726a6d2d4391b97c056089bd6, type: 3}
+    sought: T
+  - icon: {fileID: 21300000, guid: aa25c5cfdd8038140982b1b26494ea5f, type: 3}
+    sought: U
+  - icon: {fileID: 21300000, guid: 8671540f26b28ac498b9edf94c015631, type: 3}
+    sought: V
+  - icon: {fileID: 21300000, guid: 383e6589aab273247a428a2f6543798a, type: 3}
+    sought: W
+  - icon: {fileID: 21300000, guid: fe4a91e809acf5640ae707a9e15f75eb, type: 3}
+    sought: X
+  - icon: {fileID: 21300000, guid: 1de6a750b918deb498578ae78cfba64b, type: 3}
+    sought: Y
+  - icon: {fileID: 21300000, guid: 7fa4a7c51cc2e4c40badc06a4e438603, type: 3}
+    sought: z
+--- !u!114 &1799101974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799101971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1c8cb13a4e6b24cbf7eb5bd2ea2e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelSizes: 030000000600000009000000
 --- !u!1 &1821756972
 GameObject:
   m_ObjectHideFlags: 0
